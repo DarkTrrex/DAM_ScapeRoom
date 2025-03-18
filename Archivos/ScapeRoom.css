@@ -74,7 +74,7 @@ body {
 }
 
 
-/*Juego.html*/
+/*Bienvenida.html*/
 
 #Contenedor{
     width: 50%;
@@ -114,21 +114,20 @@ body {
     color: brown;
     text-align: center;
     padding:100px;
-    margin-left: 18%;
     font-size: 25px;
+    font-family: "Fresh Season";
     background-image: url("../Imagenes/Cuadro.png");
     background-repeat: no-repeat;
-    background-size:100%;
+    background-size:100%; /*Para que ocupe el 100% del elemento*/
     background-position:center;
     width: 45%;
     min-width: 45%;
     max-width: 45%;
-    height: 10%;
+    height: 10%; 
     
-  
-   
-    
-    
+}
+#CuadroInicio{
+    margin-left: 18%;
 }
 #Start{
     text-decoration: none;
@@ -169,6 +168,7 @@ body {
     top: 50%;
     left: 50%;
 }
+
 
 
 
