@@ -1,3 +1,175 @@
+/*General*/
+*{
+    margin: 0px;
+    padding: 0px;
+   
+    
+}
+@font-face { /*Incluir nuevas fuentes al documento*/
+    font-family: "RockSalt-Regular";
+    src: url("../Fuentes/RockSalt-Regular.ttf");
+    
+}
+@font-face {
+    font-family: "Fresh Season";
+    src: url("../Fuentes/Fresh Season.otf");
+}
+
 body {
     background-color: grey;
+    height: 100%;
+    background-image: url("../Imagenes/noche.jpg");
+    background-repeat: no-repeat;
+    background-size:cover; /*Cubrir todo el fondo*/
+    overflow: hidden;
 }
+#Inicial {
+    width: 70%;
+    height: 100%;
+    margin: auto;
+    background-image: url("../Imagenes/Inicio.jpg");
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-size: cover;
+    text-align: center;
+    overflow: hidden; /*Para que no haya colapso de margenes y scroll*/
+    
+}
+#Titulo {
+    color: white;
+    margin-top: 20px;
+    font-size: 50px;
+    font-family:"RockSalt-Regular";
+    text-shadow: 0px 0px 30px black;
+}
+#SubTitulo {
+    color: white;
+    font-size: 40px;
+    margin-top: 30px;
+    margin-bottom: 200px;
+
+}
+#Empezar{
+   text-decoration: none;
+   color: darkgoldenrod;
+   background-color:purple;
+   font-size: 80px;
+   font-family:"RockSalt-Regular";
+   border: 20px solid gold;
+   border-radius: 50px;
+   padding: 10px;
+
+   
+
+   
+}
+#Empezar:hover{
+    font-size: 80px;
+    color: purple;
+    background-color:black;
+    border: 20px solid darkgoldenrod;
+    border-radius: 50px;
+    font-family:"RockSalt-Regular";
+    
+}
+
+
+/*Juego.html*/
+
+#Contenedor{
+    width: 50%;
+    min-width:50%;
+    max-width:50%;
+    height: 100%;
+    max-height: 100%;
+    min-height: 100%;
+    margin: auto;
+    box-shadow: 0px 0px 10px 5px black;
+    background-color: grey;
+    background-image: url("../Imagenes/Bosque.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top:20px;
+    border-radius:20px;
+    
+    
+}
+
+#Comienzo{
+    text-align: center;
+    background-color: purple;
+    color: rgb(#2b144d);
+    font-family: "Fresh Season";
+    font-size: 60px;
+    width: 100%;
+    min-width:100%;
+    max-width:100%;
+    
+
+    
+}
+.Cuadro{
+    
+    color: brown;
+    text-align: center;
+    padding:100px;
+    margin-left: 18%;
+    font-size: 25px;
+    background-image: url("../Imagenes/Cuadro.png");
+    background-repeat: no-repeat;
+    background-size:100%;
+    background-position:center;
+    width: 45%;
+    min-width: 45%;
+    max-width: 45%;
+    height: 10%;
+    
+  
+   
+    
+    
+}
+#Start{
+    text-decoration: none;
+    color: darkgoldenrod;
+    background-color:purple;
+    font-size: 80px;
+    font-family:"Fresh Season";
+    border: 10px solid gold;
+    border-radius: 20px;
+    padding: 10px;
+    position: relative;
+    margin-left:40%;
+}
+#Start:hover{
+   
+    color: purple;
+    background-color:black;
+    border-color: darkgoldenrod;
+    
+    
+    
+}
+#Casper {
+    width: 15%;
+    min-width: 15%;
+    max-width: 15%;
+    position:absolute;
+    top: 50%;
+    left: 35%;
+    
+}
+#Nova{
+ 
+    width: 16%;
+    min-width: 16%;
+    max-width: 16%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+
+
+
