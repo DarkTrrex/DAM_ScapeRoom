@@ -24,14 +24,14 @@ function Escena2 (){
     principal.style.backgroundImage = "url('../Imagenes/galaxia.jpg')";
     principal.style.backgroundSize = "cover";
     
-
     let nuevo = "<img id='Casper' src='../Imagenes/Casper.jpg' alt='Casper'/>" +
                 "<img id='Nova' src='../Imagenes/Nova.jpg' alt='Nova'/>";
 
-
     principal.innerHTML = nuevo;
+
     let Volver = document.getElementById("Volver");
     Volver.setAttribute("onclick","Escena1()");
+    
     document.getElementById("CuadroJuego").innerHTML = "Uno de ellos que lleva un gorro morado se llama Casper mientras que la otra que lleva una gema en su cabeza se llama Nova";       
     
 }

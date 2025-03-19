@@ -21,7 +21,7 @@ body {
     background-image: url("../Imagenes/noche.jpg");
     background-repeat: no-repeat;
     background-size:cover; /*Cubrir todo el fondo*/
-    overflow: hidden;
+    overflow: hidden; /*Para que afecte a todos los elementos*/
 }
 #Inicial {
     width: 70%;
@@ -104,13 +104,7 @@ body {
     color: rgb(#2b144d);
     font-family: "Fresh Season";
     font-size: 60px;
-    width: 100%;
-    min-width:100%;
-    max-width:100%;
-    
-    
-
-    
+    box-shadow: 0px 0px 10px 5px black;
 }
 .Cuadro{
     
@@ -129,7 +123,7 @@ body {
 }
 #CuadroInicio{ /*Lo separo porque la clase cuadro la voy a seguir usando y no quiero que le afecten los margins que voy a poner a cada uno*/
    margin-bottom: 3%;
-   margin-left: 12%;
+   margin-left: 11%;
    width: 70%;
    height: 20%;
    padding: 0px 40px;
@@ -186,7 +180,7 @@ body {
     background-size:cover;
     background-color: grey;
     border-radius:20px;
-
+    box-shadow: 0px 0px 10px 5px black;
 }
 #Casper{
   width: 300px;
@@ -207,55 +201,50 @@ body {
     width: 70%;
     height: 30%;
     margin: auto;
-    
-    background-color: pink;
     border-radius:20px;
     text-align: center;
+    background-color: pink;
     background-image: url(../Imagenes/Bosque.jpg);
     background-repeat: no-repeat;
     background-position-y: center;
     background-size: cover;
-    
+    box-shadow: 0px 0px 10px 5px black;
 }
-#Consola #Volver {
+#Volver {
     float: left;
-    width: 15%;
-    height: 100%;
-    
-    background-image: url(../Imagenes/Volver.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    margin-left: 1.5em;
+    width: 16%;
+    height: 80%;
+    margin-left: 2em;
     
    
 
 }
+#Volver:hover{
+    
+    background-color: rgba(209, 15, 71, 0.5);
+    border-radius:30px;
+}
 #Consola .Cuadro{
     
-    margin-left: 4em;
+    margin-left: 2.5em;
     margin-top: 0.25em;
     width: 40%;
     float: left;
     height: 50%;
     padding: 1em;
-  
-  
+    
+}
+#Seguir {
+    float: right;
+    width: 16%;
+    height: 80%;
+    margin-right: 2em;
    
 
 }
-#Consola #Seguir {
-    float: right;
-    width: 15%;
-    height: 100%;
-    background-image: url(../Imagenes/Seguir.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    
-    margin-right: 1.5em;
-   
-
+#Seguir:hover{
+    background-color: rgba(209, 15, 71, 0.5);
+    border-radius:30px;
 }
 
 
