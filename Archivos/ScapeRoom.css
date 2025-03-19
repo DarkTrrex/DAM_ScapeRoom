@@ -89,9 +89,11 @@ body {
     background-image: url("../Imagenes/Bosque.jpg");
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; /*Para que la imagen de fondo se rediemnsione con el contenido y no deje espacios en blanco*/
     padding-top:20px;
     border-radius:20px;
+    
+
     
     
 }
@@ -106,6 +108,7 @@ body {
     min-width:100%;
     max-width:100%;
     
+    
 
     
 }
@@ -113,21 +116,25 @@ body {
     
     color: brown;
     text-align: center;
-    padding:100px;
-    font-size: 25px;
+    font-size: 35px;
     font-family: "Fresh Season";
     background-image: url("../Imagenes/Cuadro.png");
     background-repeat: no-repeat;
-    background-size:100%; /*Para que ocupe el 100% del elemento*/
+    background-size:contain; /*Para que se redimensione con el contenido*/
     background-position:center;
-    width: 45%;
-    min-width: 45%;
-    max-width: 45%;
-    height: 10%; 
+    
+    
+    
     
 }
-#CuadroInicio{
-    margin-left: 18%;
+#CuadroInicio{ /*Lo separo porque la clase cuadro la voy a seguir usando y no quiero que le afecten los margins que voy a poner a cada uno*/
+   margin-bottom: 3%;
+   margin-left: 12%;
+   width: 70%;
+   height: 20%;
+   padding: 0px 40px;
+   padding-top: 10%;
+   
 }
 #Start{
     text-decoration: none;
@@ -139,7 +146,8 @@ body {
     border-radius: 20px;
     padding: 10px;
     position: relative;
-    margin-left:40%;
+    margin-left: 40%;
+    
 }
 #Start:hover{
    
@@ -150,7 +158,7 @@ body {
     
     
 }
-#Casper {
+#CasperBienvenida {
     width: 15%;
     min-width: 15%;
     max-width: 15%;
@@ -159,7 +167,7 @@ body {
     left: 35%;
     
 }
-#Nova{
+#NovaBienvenida{
  
     width: 16%;
     min-width: 16%;
@@ -167,6 +175,87 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
+}
+/*Juego.html*/
+#Principal{
+    width: 70%;
+    height: 75%;
+    margin: auto;
+    background-image: url(../Imagenes/Casper_y_Nova.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-color: grey;
+    border-radius:20px;
+
+}
+#Casper{
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  top: 9.5em;
+  left: 33%;
+}
+#Nova{
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top: 10em;
+    left: 50%;
+
+}
+#Consola{
+    width: 70%;
+    height: 30%;
+    margin: auto;
+    
+    background-color: pink;
+    border-radius:20px;
+    text-align: center;
+    background-image: url(../Imagenes/Bosque.jpg);
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-size: cover;
+    
+}
+#Consola #Volver {
+    float: left;
+    width: 15%;
+    height: 100%;
+    
+    background-image: url(../Imagenes/Volver.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-left: 1.5em;
+    
+   
+
+}
+#Consola .Cuadro{
+    
+    margin-left: 4em;
+    margin-top: 0.25em;
+    width: 40%;
+    float: left;
+    height: 50%;
+    padding: 1em;
+  
+  
+   
+
+}
+#Consola #Seguir {
+    float: right;
+    width: 15%;
+    height: 100%;
+    background-image: url(../Imagenes/Seguir.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+    margin-right: 1.5em;
+   
+
 }
 
 
