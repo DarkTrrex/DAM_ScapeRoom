@@ -84,7 +84,7 @@ body {
     margin: auto;
     box-shadow: 0px 0px 10px 5px black;
     background-color: grey;
-    background-image: url("../Imagenes/Bosque.jpg");
+    background-image: url("../Imagenes/Bosque1.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover; /*Para que la imagen de fondo se rediemnsione con el contenido y no deje espacios en blanco*/
@@ -174,9 +174,9 @@ body {
     width: 70%;
     height: 75%;
     margin: auto;
-    background-image: url(../Imagenes/Casper_y_Nova.jpg);
+    background-image: url("../Imagenes/Casper_y_Nova.jpg");
     background-repeat: no-repeat;
-    background-size:cover;
+    background-size:contain;
     background-color: grey;
     border-radius:20px;
     box-shadow: 0px 0px 10px 5px black;
@@ -201,7 +201,7 @@ body {
     border-radius:20px;
     text-align: center;
     background-color: pink;
-    background-image: url(../Imagenes/Bosque.jpg);
+    background-image: url(../Imagenes/Bosque1.jpg);
     background-repeat: no-repeat;
     background-position-y: center;
     background-size: cover;
