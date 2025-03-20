@@ -21,10 +21,11 @@ body {
     background-image: url("../Imagenes/noche.jpg");
     background-repeat: no-repeat;
     background-size:cover; /*Cubrir todo el fondo*/
-    
+    overflow: hidden;
 }
 #Inicial {
     width: 70%;
+    max-width: 700px;
     height: 100%;
     margin: auto;
     background-image: url("../Imagenes/Inicio.jpg");
@@ -32,7 +33,8 @@ body {
     background-position-y: center;
     background-size: cover;
     text-align: center;
-    overflow: hidden; /*Para que no haya colapso de margenes y scroll*/
+   
+    
     
 }
 #Titulo {
@@ -44,7 +46,7 @@ body {
 }
 #SubTitulo {
     color: white;
-    font-size: 40px;
+    font-size: 30px;
     margin-top: 30px;
     margin-bottom: 200px;
 
@@ -58,6 +60,7 @@ body {
    border: 20px solid gold;
    border-radius: 50px;
    padding: 10px;
+  
 
    
 
@@ -90,6 +93,10 @@ body {
     background-size: cover; /*Para que la imagen de fondo se rediemnsione con el contenido y no deje espacios en blanco*/
     padding-top:20px;
     border-radius:20px;
+    overflow:auto;
+    
+    
+    
     
 
     
@@ -108,7 +115,7 @@ body {
     
     color: brown;
     text-align: center;
-    font-size: 2.5em;
+    font-size: 2em;
     font-family: "Fresh Season";
     background-image: url("../Imagenes/Cuadro.png");
     background-repeat: no-repeat;
@@ -127,6 +134,7 @@ body {
    padding: 0px 4%;
    padding-top: 10%;
    
+   
 }
 #Start{
     text-decoration: none;
@@ -137,8 +145,10 @@ body {
     border: 10px solid gold;
     border-radius: 20px;
     padding: 1%;
-    position: relative;
-    margin-left: 40%;
+    position: absolute;
+    left: 44%;
+    top:39%;
+    
     
 }
 #Start:hover{
@@ -176,9 +186,9 @@ body {
     margin: auto;
     background-image: url("../Imagenes/Casper_y_Nova.jpg");
     background-repeat: no-repeat;
-    background-size:contain;
+    background-size:cover;
     background-color: grey;
-    border-radius:20px;
+    border-radius:5%;
     box-shadow: 0px 0px 10px 5px black;
 }
 #Casper{
@@ -198,7 +208,6 @@ body {
     width: 70%;
     height: 25%;
     margin: auto;
-    border-radius:20px;
     text-align: center;
     background-color: pink;
     background-image: url(../Imagenes/Bosque1.jpg);
@@ -206,19 +215,21 @@ body {
     background-position-y: center;
     background-size: cover;
     box-shadow: 0px 0px 10px 5px black;
+    border-radius:20px;
+    overflow:auto;
 }
 #Volver {
     float: left;
     width: 15%;
     height: 80%;
-    margin-left: 2em;
+    margin-left: 2%;
     margin-top: 1%;
 
 }
 #Volver:hover{
     
     background-color: rgba(209, 15, 71, 0.5);
-    border-radius:30px;
+    border-radius:20%;
 }
 #Consola .Cuadro{
     
@@ -227,21 +238,21 @@ body {
     width: 40%;
     float: left;
     height: 50%;
-    padding: 1em;
+    padding: 1.5em;
     
 }
 #Seguir {
     float: right;
     width: 15%;
     height: 80%;
-    margin-right: 2em;
+    margin-right: 2%;
     margin-top: 1%;
    
 
 }
 #Seguir:hover{
     background-color: rgba(209, 15, 71, 0.5);
-    border-radius:30px;
+    border-radius:20%;
 }
 
 
