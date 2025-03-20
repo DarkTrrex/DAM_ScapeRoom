@@ -84,9 +84,9 @@ function Escena4(){
     let Nova = document.getElementById("Nova");
 
     Casper.style.top = "10%";
-    Casper.style.left="33%";
+    Casper.style.left="28%";
     Nova.style.top = "12%";
-    Nova.style.left="48%";
+    Nova.style.left="25%";
 
     let Volver = document.getElementById("Volver");
     Volver.setAttribute("onclick","Escena3()");
@@ -111,16 +111,16 @@ function Escena5 (){
    
 
     let puerta = document.getElementById("puerta");
-    puerta.style.width = "4%";
-    puerta.style.height = "8%";
+    puerta.style.width = "6%";
+    puerta.style.height = "10%";
     
     puerta.style.backgroundImage ="url('../Imagenes/Puerta.png')";
     puerta.style.backgroundPosition = "center";
     puerta.style.backgroundRepeat = "no-repeat";
     puerta.style.backgroundSize = "contain";
-    puerta.style.position = "absolute";
-    puerta.style.top = "54%";
-    puerta.style.left = "55%";
+    puerta.style.position = "relative";
+    puerta.style.top = "71%";
+    puerta.style.left = "57%";
     
 
 
@@ -132,7 +132,7 @@ function Escena5 (){
     Seguir.setAttribute("onclick","");
     Seguir.setAttribute("src","../Imagenes/NoSeguir.png");
 
-    document.getElementById("CuadroJuego").innerHTML="Esta es la casa de Casper y Nova (Pulsa la puerta para entrar)";
+    document.getElementById("CuadroJuego").innerHTML="Esta es la casa de Casper y Nova"+" <br></br>"+" (Pulsa la puerta para entrar)";
 
 }
 function Escena6 (){
@@ -145,8 +145,8 @@ function Escena6 (){
    
     let Nova = document.getElementById("Nova");
 
-    Nova.style.top = "25%";
-    Nova.style.left="38%";
+    Nova.style.top = "35%";
+    Nova.style.left="35%";
 
 
 
@@ -171,12 +171,10 @@ function Escena7 (){
     let puerta = document.getElementById("puerta");
     puerta.style.width = "30%";
     puerta.style.height = "60%";
-    puerta.style.position = "absolute";
-    puerta.style.top = "11%";
-    puerta.style.left = "6.5%";
-
-    Nova.style.top = "25%";
-    Nova.style.left="38%";
+    puerta.style.bottom = "30%";
+    puerta.style.position = "relative";
+    Nova.style.top = "35%";
+    Nova.style.left="35%";
 
     let Volver = document.getElementById("Volver");
     Volver.setAttribute("onclick","Escena6()");
@@ -185,7 +183,7 @@ function Escena7 (){
     Seguir.setAttribute("onclick","");
     Seguir.setAttribute("src","../Imagenes/NoSeguir.png");
 
-    document.getElementById("CuadroJuego").innerHTML="Casper: Ya voy!!! (Pulsa la puerta de la entrada para salir)";
+    document.getElementById("CuadroJuego").innerHTML="Casper: Ya voy!!! "+"<br></br> "+"(Pulsa la puerta de la entrada para salir)";
     
 }
 function Escena8 (){
@@ -199,20 +197,20 @@ function Escena8 (){
     let Nova = document.getElementById("Nova");
     let Casper = document.getElementById("Casper");
 
-    Nova.style.top = "38%";
-    Nova.style.left="28%";
+    Nova.style.top = "52%";
+    Nova.style.left="3%";
 
-    Casper.style.top = "35%";
-    Casper.style.left="15%";
+    Casper.style.top = "49%";
+    Casper.style.left="3%";
 
     let Volver = document.getElementById("Volver");
     Volver.setAttribute("onclick","Escena7()");
 
     let Seguir = document.getElementById("Seguir");
     Seguir.setAttribute("onclick","Escena9()");
-    Seguir.setAttribute("src","../Imagenes/Seguir.png");
+    Seguir.setAttribute("src","../Imagenes/Bus.png");
 
-    document.getElementById("CuadroJuego").innerHTML="Nova:Bien. Ya estamos listos para la aventura";
+    document.getElementById("CuadroJuego").innerHTML="Nova:Bien. Ya estamos listos para la aventura" +" <br></br> "+"(Pulsa el bus para continuar)";
 }
 function Escena9(){
     
