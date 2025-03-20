@@ -21,7 +21,7 @@ body {
     background-image: url("../Imagenes/noche.jpg");
     background-repeat: no-repeat;
     background-size:cover; /*Cubrir todo el fondo*/
-    overflow: hidden;
+    overflow: auto hidden ;
 }
 #Inicial {
     width: 70%;
@@ -39,8 +39,8 @@ body {
 }
 #Titulo {
     color: white;
-    margin-top: 20px;
-    font-size: 50px;
+    margin-top: 2%;
+    font-size: 3em;
     font-family:"RockSalt-Regular";
     text-shadow: 0px 0px 30px black;
 }
@@ -55,11 +55,11 @@ body {
    text-decoration: none;
    color: darkgoldenrod;
    background-color:purple;
-   font-size: 80px;
+   font-size: 5em;
    font-family:"RockSalt-Regular";
    border: 20px solid gold;
    border-radius: 50px;
-   padding: 10px;
+   padding: 1%;
   
 
    
@@ -81,8 +81,8 @@ body {
 
 #Contenedor{
     width: 50%;
-    min-width:50%;
-    max-width:50%;
+    min-width:1000px;
+    max-width:1000px;
     height: 97.5%;
     margin: auto;
     box-shadow: 0px 0px 10px 5px black;
@@ -91,7 +91,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover; /*Para que la imagen de fondo se rediemnsione con el contenido y no deje espacios en blanco*/
-    padding-top:20px;
+    padding-top:2%;
     border-radius:20px;
     overflow:auto;
     
@@ -108,7 +108,7 @@ body {
     background-color: purple;
     color: rgb(#2b144d);
     font-family: "Fresh Season";
-    font-size: 60px;
+    font-size: 4em;
     box-shadow: 0px 0px 10px 5px black;
 }
 .Cuadro{
@@ -124,30 +124,31 @@ body {
     
     
     
-    
 }
 #CuadroInicio{ /*Lo separo porque la clase cuadro la voy a seguir usando y no quiero que le afecten los margins que voy a poner a cada uno*/
-   margin-bottom: 3%;
-   margin-left: 11%;
-   width: 70%;
-   height: 20%;
-   padding: 0px 4%;
-   padding-top: 10%;
-   
+    width: 70%;
+    max-width: 800px;
+    min-width: 700px;
+    height: 20%;
+    min-height: 200px;
+    max-height: 200px;
+    padding: 0px 4%;
+    padding-top: 10%;
+    margin-left:10%;
+   margin-bottom: 2%;
    
 }
 #Start{
     text-decoration: none;
     color: darkgoldenrod;
     background-color:purple;
-    font-size: 80px;
+    font-size: 4.7em;
     font-family:"Fresh Season";
     border: 10px solid gold;
     border-radius: 20px;
     padding: 1%;
-    position: absolute;
-    left: 44%;
-    top:39%;
+    margin-left: 40%;
+  
     
     
 }
@@ -165,7 +166,7 @@ body {
     min-width: 15%;
     max-width: 15%;
     position:absolute;
-    top: 50%;
+    top: 55%;
     left: 35%;
     
 }
@@ -175,14 +176,18 @@ body {
     min-width: 16%;
     max-width: 16%;
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 50%;
 }
 
 /*Juego.html*/
 #Principal{
     width: 70%;
+    max-width: 1350px;
+    min-width: 1350px;
     height: 75%;
+    max-height: 600px;
+    min-height: 700px;
     margin: auto;
     background-image: url("../Imagenes/Casper_y_Nova.jpg");
     background-repeat: no-repeat;
@@ -206,7 +211,11 @@ body {
 }
 #Consola{
     width: 70%;
+    max-width: 1350px;
+    min-width: 1350px;
     height: 25%;
+    min-height: 250px;
+    max-height: 250px;
     margin: auto;
     text-align: center;
     background-color: pink;
@@ -233,11 +242,15 @@ body {
 }
 #Consola .Cuadro{
     
-    margin-left: 2.5em;
+    margin-left: 4em;
     margin-top: 0.25em;
     width: 40%;
+    min-width:500px;
+    max-width: 500px;
     float: left;
     height: 50%;
+    min-height: 100px;
+    max-height: 100px;
     padding: 1.5em;
     
 }
