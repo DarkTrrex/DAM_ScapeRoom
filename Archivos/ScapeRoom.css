@@ -201,17 +201,14 @@ body {
     box-shadow: 0px 0px 10px 5px black;
 }
 #Casper{
-  width: 20%;
-  height: 50%;
+
   position: relative;
   
 }
 #Nova{
-    width: 20%;
-    height: 50%;
+    
     position: relative;
     
-
 }
 #Consola{
     width: 70%;
@@ -272,11 +269,66 @@ body {
     border-radius:20%;
 }
 
-#cuadro img{
-    width: 100%;
-    height: 100%;
+#cuadro {
+    background-image: url("../Imagenes/Cuadro.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 0.5em solid brown;
+    border-radius: 10%;
 }
 
+#papel {
+    background-image: url("../Imagenes/Codigo.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
 
+ul#lista {
+    list-style: none;
+    text-align: center;
+}
 
+ul#lista li.opcion{
+    
+    background-image: url("../Imagenes/Opcion.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin:auto;
+    text-align: center;
+    font-family: "RockSalt-Regular";
+    color:orangered;
+    font-size: 2em;
+    padding-top:5%;
+    width: 40%;
+    max-width: 40%;
+    min-width: 40%;
+    height: 30%;
+    max-height: 30%;
+    max-height: 30%;
+}
 
+ul#lista li.opcion:hover{
+    
+    text-shadow: 0 0 15px  purple;
+   
+}
+li.opcion + li.opcion {
+    top:10%;
+}
+
+#code {
+    
+    color: gold;
+    font-size: 3em;
+    font-family: "Fresh Season";
+    text-align: center;
+    border: 15px solid black;
+    border-radius:20px;
+    background-color: gray;
+}
+#code:invalid{
+    color: red;
+}
