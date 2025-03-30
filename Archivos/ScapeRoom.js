@@ -1,4 +1,5 @@
 /*Funciones de inicio: */
+
 function Hola (nombre){
     
     if(nombre == "Nova"){
@@ -11,6 +12,7 @@ function Hola (nombre){
 }
 
 /*Funciones de configuracion: */
+
 function DeVuelta (){
 
     window.location.assign("Bienvenida.html");/*Volver a la pestaña de Bienvenida*/
@@ -97,7 +99,7 @@ function Objeto (id,width,height,top,bottom,left,right){
     Objeto.style.bottom = bottom;
     Objeto.style.left = left;
     Objeto.style.right = right;
-    /*Objeto.style.backgroundColor = "yellow";*/
+   
 }
 function Lista (numero,onclicks){
     let nuevo = "<ul id='lista'>";
@@ -111,7 +113,7 @@ function Lista (numero,onclicks){
 }
 function ElementoLista (Class,frases){
 
-    let elementos = document.getElementsByClassName(Class); /*Obtengo varios elementos que son los que tengan esta clase */
+    let elementos = document.getElementsByClassName(Class); 
 
     let elemento;
 
@@ -136,6 +138,52 @@ function Correcto (){
     document.getElementById('code').value= 'Correcto';   
     document.getElementById('code').style.color = 'green'; 
 }
+function ReproducirAudio (sonido){
+    
+    let audio = document.getElementById(sonido);
+    audio.play();
+}
+
+/*Elementos de la habitacion del Motel: */
+
+function Armario(){
+
+    BorrarContenido();
+
+    MeterContenido("",'../Imagenes/Armario.jpg');
+
+    CambiarVolver('Escena11()',"");
+
+    CambiarSeguir('Escena11()',"");
+
+    CambiarDialogo("Nova: En este armario caben muchas cosas, no me imaginaba que tuviera el suficiente espacio para nuestra ropa");
+}
+function cuadro (){
+
+    BorrarContenido();
+
+    MeterContenido("<div id='ocho'>B</div>'",'../Imagenes/Cuadro.jpg');
+
+    CambiarVolver('Escena11()',"");
+
+    CambiarSeguir('Escena11()',"");
+
+    CambiarDialogo("Nova: Este cuadro me recuerda a un juego pero no estoy muy segura a cual. Parece que cada uno va catalogado con una letra");
+    Objeto("ocho","5%","8%","5%","","2%",""); /*id,width,height,top,bottom,left,right */
+}
+function ventana(){
+    BorrarContenido();
+
+    MeterContenido("",'../Imagenes/Bosque2.jpg');
+
+    CambiarVolver('Escena11()',"");
+
+    CambiarSeguir('Escena11()',"");
+
+    CambiarDialogo("Nova: Guau, se ve un bonito bosque desde aqui");
+}
+
+
 
 /*Escenas: */
 
@@ -143,7 +191,7 @@ function Escena1 (){
 
     BorrarContenido();
 
-    MeterContenido("<div id='prueba' onclick = 'Escena17_1()'></div>",'../Imagenes/Casper_y_Nova.jpg');
+    MeterContenido("",'../Imagenes/Casper_y_Nova.jpg');
 
     CambiarVolver('DeVuelta()',"");
 
@@ -151,7 +199,7 @@ function Escena1 (){
 
     CambiarDialogo("Un dia 2 magos aburridos deciden tomar un viaje");
 
-    Objeto("prueba","50%","50%","0","","0","");
+    
     
 }
 
@@ -340,45 +388,7 @@ function Escena11(){
     
     
 }
-/*Elementos: */
 
-function Armario(){
-
-    BorrarContenido();
-
-    MeterContenido("",'../Imagenes/Armario.jpg');
-
-    CambiarVolver('Escena11()',"");
-
-    CambiarSeguir('Escena11()',"");
-
-    CambiarDialogo("Nova: En este armario caben muchas cosas, no me imaginaba que tuviera el suficiente espacio para nuestra ropa");
-}
-function cuadro (){
-
-    BorrarContenido();
-
-    MeterContenido("",'../Imagenes/Cuadro.jpg');
-
-    CambiarVolver('Escena11()',"");
-
-    CambiarSeguir('Escena11()',"");
-
-    CambiarDialogo("Nova: Este cuadro me recuerda a un juego pero no estoy muy segura a cual");
-}
-function ventana(){
-    BorrarContenido();
-
-    MeterContenido("",'../Imagenes/Bosque2.jpg');
-
-    CambiarVolver('Escena11()',"");
-
-    CambiarSeguir('Escena11()',"");
-
-    CambiarDialogo("Nova: Guau, se ve un bonito bosque desde aqui");
-}
-
-/*Mas Escenas: */
 
 function Escena12 (){
 
@@ -414,7 +424,7 @@ function Escena13() {
     Nova("20%","50%","52%","50%","0","0"); /*width,height,top,left,right,bottom*/
     Casper("20%","50%","49%","50%","","0"); /*width,height,top,left,right,bottom*/
 
-    Objeto("papel","2%","7%","","45%","75%",""); /*id,width,height,top,bottom,left,right */
+    Objeto("papel","2%","7%","41%","","2%",""); /*id,width,height,top,bottom,left,right */
 }
 
 /*Mas Elementos: */
@@ -461,7 +471,7 @@ function Escena15(){
 
     CambiarSeguir('',"../Imagenes/NoSeguir.png");
 
-    CambiarDialogo("Escoge a quien hacer caso"+"<br>"+"(Despues de elegir,no podras volver atras)");
+    CambiarDialogo("Escoge a quien hacer caso");
 
     Nova("15%","40%","52%","50%","0","0"); /*width,height,top,left,right,bottom*/
     Casper("15%","40%","49%","50%","","0"); /*width,height,top,left,right,bottom*/
@@ -469,6 +479,8 @@ function Escena15(){
     Objeto("lista","60%","60%","","25%","18%",""); /*id,width,height,top,bottom,left,right */
     ElementoLista ("opcion",["Casper","Nova"]); /*Class,frases*/
 }
+/*Casper: */
+
 function Escena16_1(){
 
     BorrarContenido();
@@ -500,11 +512,11 @@ function Escena17_1(){
 }
 function Escena18_1(){
     
-    if(document.getElementById('code').value != 1958){
+    if(document.getElementById('code').value != 195+"B" && document.getElementById('code').value != 195+"b"){
 
         BorrarContenido();
 
-        MeterContenido("<input id='code' type='text' size='4' minlength='4' maxlength='4' placeholder='Code'>",'../Imagenes/Candado.jpg');
+        MeterContenido("<div id='code'>Incorrecto</div>",'../Imagenes/Candado.jpg');
 
         CambiarVolver('Escena17_1()',"");
 
@@ -512,14 +524,15 @@ function Escena18_1(){
 
         CambiarDialogo("Nova: Vaya, parece que el codigo no es correcto, yo seguiria por el camino de antes");
     
-        Objeto("code","13%","13%","40%","","38%",""); /*id,width,height,top,bottom,left,right */
+        Objeto("code","15%","10%","40%","","36%",""); /*id,width,height,top,bottom,left,right */
     
         Incorrecto();   
 
     }else{
+
         BorrarContenido();
 
-        MeterContenido("<input id='code' type='text' size='4' minlength='4' maxlength='4' placeholder='Code'>",'../Imagenes/Candado.jpg');
+        MeterContenido("<div id='code'>Correcto</div>",'../Imagenes/Candado.jpg');
 
         CambiarVolver('Escena17_1()',"");
 
@@ -527,7 +540,7 @@ function Escena18_1(){
 
         CambiarDialogo("Casper: Genial, el codigo es correcto, Entremos!!!"+"<br>"+"Nota: A partir de aqui no podras volver, la opcion es tuya");
     
-        Objeto("code","13%","13%","40%","","38%",""); /*id,width,height,top,bottom,left,right */
+        Objeto("code","15%","10%","40%","","36%",""); /*id,width,height,top,bottom,left,right */
     
         Correcto(); 
     }
@@ -540,9 +553,344 @@ function Escena19_1 (){
 
     CambiarVolver('',"../Imagenes/NoVolver.png");
 
-    CambiarSeguir('Escena20_1',"");
+    CambiarSeguir('Escena20_1()',"");
 
-    CambiarDialogo("Nova: Esto no me gusta nada hay, por las escaleras se oye un ruido extraño y en la habitacion de enfrente huele a quemado");
+    CambiarDialogo("Nova: Esto no me gusta nada, por las escaleras se oye un ruido extraño y en la habitacion de enfrente huele a quemado");
     
-    Objeto("code","13%","13%","40%","","38%",""); /*id,width,height,top,bottom,left,right */
+    
+}
+function Escena20_1(){
+
+    BorrarContenido();
+
+    let nuevo = Lista(2,["Escena21_1_1()","Escena21_1_2()"]);
+
+    MeterContenido(nuevo,'../Imagenes/Interior_abandonada.jpg');
+
+    CambiarVolver('Escena19_1()',"");
+
+    CambiarSeguir('',"../Imagenes/NoSeguir.png");
+
+    CambiarDialogo("Elige con cuidado que camino coger"+"<br>"+"(No podras volver atras a partir de ahora)");
+    
+    Objeto("lista","80%","80%","10%","","8%",""); /*id,width,height,top,bottom,left,right */
+    ElementoLista ("opcion",["Escaleras","Habitacion"]); /*Class,frases*/
+}
+
+/*Casper-Escalera: */
+
+function Escena21_1_1(){
+
+    BorrarContenido();
+
+
+    MeterContenido("<img id='Casper' src='../Imagenes/Casper.jpg' alt='Casper'/> <img id='Nova' src='../Imagenes/Nova.jpg' alt='Nova'/> <img id='estatua' src='../Imagenes/Estatua.png' alt='Estatua'>",'../Imagenes/Atico.jpg');
+
+    CambiarVolver('',"../Imagenes/NoVolver.png");
+
+    CambiarSeguir('Escena22_1_1()',"");
+
+    Nova("23%","60%","30%","50%","",""); /*width,height,top,left,right,bottom*/
+    Casper("22%","58%","30%","50%","",""); /*width,height,top,left,right,bottom*/
+
+    CambiarDialogo("Nova: Parece una estatua. Me suena haberla visto en el museo de al lado de casa."+"<br>"+"Casper: Seguro que si la devolvemos nos dan mazo pasta");
+
+    Objeto("estatua","50%","70%","30%","","","58%"); /*id,width,height,top,bottom,left,right */
+}
+function Escena22_1_1(){
+
+    BorrarContenido();
+
+    MeterContenido("<img id='Casper' src='../Imagenes/Casper.jpg' alt='Casper'/> <img id='Nova' src='../Imagenes/Nova.jpg' alt='Nova'/> <img id='estatua' src='../Imagenes/Estatua.png' alt='Estatua' onclick ='ReproducirAudio(\"Extraterrestre\")' > <audio  id='Extraterrestre' src='../Audios/Extraterrestre.mp3'></audio>",'../Imagenes/Atico.jpg');
+
+    CambiarVolver('',"../Imagenes/NoVolver.png");
+
+    CambiarSeguir('FIN1_1()',"");
+
+    Nova("23%","60%","30%","50%","",""); /*width,height,top,left,right,bottom*/
+    Casper("22%","58%","30%","50%","",""); /*width,height,top,left,right,bottom*/
+
+    CambiarDialogo("Casper: Y ahora que lo pienso esta estatua hacia ruidos raros para simular un Extraterrestre"+"<br>"+" Nova:Es verdad eso explica lo del ruido");
+
+    Objeto("estatua","50%","70%","30%","","","58%"); /*id,width,height,top,bottom,left,right */
+}
+
+/*Casper-Habitacion: */
+
+function Escena21_1_2(){
+
+    BorrarContenido();
+
+
+    MeterContenido("<img id='Casper' src='../Imagenes/Casper.jpg' alt='Casper'/> <img id='Nova' src='../Imagenes/Nova.jpg' alt='Nova'/> <img id='Chimenea' src = '../Imagenes/Chimenea_llamas.png'> <img id='Extintor' src = '../Imagenes/Extintor.png' onclick='Escena22_1_2()'> <audio loop id='Incendio' src='../Audios/Incendio.mp3'></audio>",'../Imagenes/Habitacion_abandonada.jpg');
+
+    CambiarVolver('',"../Imagenes/NoVolver.png");
+
+    CambiarSeguir('',"../Imagenes/NoSeguir.png");
+
+    ReproducirAudio('Incendio');
+
+    Nova("23%","60%","42%","","",""); /*width,height,top,left,right,bottom*/
+    Casper("22%","58%","38%","","",""); /*width,height,top,left,right,bottom*/
+
+    CambiarDialogo("Casper: LA CHIMENEA ESTA EN LLAMAS, VAMOS A MORIIIRR!!!"+"<br>"+"Nova: Mira, un extintor.Cogelo,RAPIDO!!!"+"<br>"+"(Pulsa el extintor para apagar el fuego)");
+
+    Objeto("Chimenea","30%","50%","35%","","3%",""); /*id,width,height,top,bottom,left,right */
+    Objeto("Extintor","15%","30%","40%","","5%",""); /*id,width,height,top,bottom,left,right */
+    
+
+}
+function Escena22_1_2 (){
+
+    BorrarContenido();
+
+
+    MeterContenido("<img id='Casper' src='../Imagenes/Casper.jpg' alt='Casper'/> <img id='Nova' src='../Imagenes/Nova.jpg' alt='Nova'/> <img id='Chimenea' src = '../Imagenes/Chimenea_llamas.png'> <img id='Extintor' src = '../Imagenes/Extintor.png'> <img id='Fuego' src='../Imagenes/Fuego.png'>  <audio loop id='Incendio' src='../Audios/Incendio.mp3'></audio>",'../Imagenes/Habitacion_abandonada_Incendio.jpg');
+
+    CambiarVolver('',"../Imagenes/NoVolver.png");
+
+    CambiarSeguir('FIN1_2()',"");
+
+    ReproducirAudio('Incendio');
+
+    Nova("23%","60%","42%","","",""); /*width,height,top,left,right,bottom*/
+    Casper("22%","58%","38%","","",""); /*width,height,top,left,right,bottom*/
+
+    CambiarDialogo("Nova: DEMASIADO TARDE"+"<br>"+"Casper: AAAHHHHH!!!");
+
+    Objeto("Chimenea","30%","50%","35%","","3%",""); /*id,width,height,top,bottom,left,right */
+    Objeto("Extintor","15%","30%","40%","","5%",""); /*id,width,height,top,bottom,left,right */
+    Objeto("Fuego","15%","30%","12%","","78%",""); /*id,width,height,top,bottom,left,right */
+}
+
+/*Nova: */
+
+function Escena16_2(){
+    BorrarContenido();
+
+    MeterContenido("<img id='Casper' src='../Imagenes/Casper.jpg' alt='Casper'/> <img id='Nova' src='../Imagenes/Nova.jpg' alt='Nova'/>",'../Imagenes/Cabaña.jpg');
+
+    CambiarVolver('Escena15()',"");
+
+    CambiarSeguir('Escena17_2()',"");
+
+    CambiarDialogo("Nova: Ya veras que por aqui no habra ningun peligro"+"<br>"+"Casper: Jo. Con lo chulo que hubiera estado entrar");
+
+    Nova("15%","40%","52%","50%","0","0"); /*width,height,top,left,right,bottom*/
+    Casper("15%","40%","49%","50%","","0"); /*width,height,top,left,right,bottom*/
+}
+function Escena17_2(){
+    BorrarContenido();
+
+    MeterContenido("<img id='Casper' src='../Imagenes/Casper.jpg' alt='Casper'/> <img id='Nova' src='../Imagenes/Nova.jpg' alt='Nova'/>",'../Imagenes/Camino.jpg');
+
+    CambiarVolver('Escena16_2()',"");
+
+    CambiarSeguir('Escena18_2()',"");
+
+    CambiarDialogo("Nova:Parece que hay alguien alli al fondo me pregunto quien sera"+"<br>"+"Vamos a verle");
+
+    Nova("15%","40%","63%","20%","",""); /*width,height,top,left,right,bottom*/
+    Casper("15%","40%","60%","20%","",""); /*width,height,top,left,right,bottom*/
+}
+function Escena18_2(){
+    BorrarContenido();
+
+    MeterContenido("<img id='Casper' src='../Imagenes/Casper.jpg' alt='Casper'/> <img id='Nova' src='../Imagenes/Nova.jpg' alt='Nova'/> <img id='Bonnie' src='../Imagenes/Bonnie_sentado.png' alt='Bonnie'/>",'../Imagenes/Acantilado.jpg');
+
+    CambiarVolver('Escena17_2()',"");
+
+    CambiarSeguir('Escena19_2()',"");
+
+    CambiarDialogo("Nova: Quien eres?"+"<br>"+"Casper: Que haces aqui?"+"<br>"+"Bonnie:Soy Bonnie y he venido aqui porque la vida ya no tiene sentido para mi");
+
+    Nova("10%","25%","33%","0","",""); /*width,height,top,left,right,bottom*/
+    Casper("10%","25%","30%","0","",""); /*width,height,top,left,right,bottom*/
+    Objeto("Bonnie","25%","30%","30%","","10%",""); /*id,width,height,top,bottom,left,right */
+}
+function Escena19_2(){
+    BorrarContenido();
+
+    MeterContenido("<img id='Casper' src='../Imagenes/Casper.jpg' alt='Casper'/> <img id='Nova' src='../Imagenes/Nova.jpg' alt='Nova'/> <img id='Bonnie' src='../Imagenes/Bonnie_sentado.png' alt='Bonnie'/>",'../Imagenes/Acantilado.jpg');
+
+    CambiarVolver('Escena18_2()',"");
+
+    CambiarSeguir('Escena20_2()',"");
+
+    CambiarDialogo("Bonnie: Ademas, mataron a mis amigos hace poco en otro ScapeRoom y para colmo mi chimenea se incendio, dejo mi sistema de movimiento sin funcionamiento y seguramente quemo mi casa");
+
+    Nova("10%","25%","33%","0","",""); /*width,height,top,left,right,bottom*/
+    Casper("10%","25%","30%","0","",""); /*width,height,top,left,right,bottom*/
+    Objeto("Bonnie","25%","30%","30%","","10%",""); /*id,width,height,top,bottom,left,right */
+}
+function Escena20_2(){
+    BorrarContenido();
+
+    MeterContenido("<img id='Casper' src='../Imagenes/Casper.jpg' alt='Casper'/> <img id='Nova' src='../Imagenes/Nova.jpg' alt='Nova'/> <img id='Bonnie' src='../Imagenes/Bonnie_sentado.png' alt='Bonnie'/>",'../Imagenes/Acantilado.jpg');
+
+    CambiarVolver('Escena19_2()',"");
+
+    CambiarSeguir('Escena21_2()',"");
+
+    CambiarDialogo("Nova: Podemos reparate dinos como lo hacemos"+"<br>"+"Bonnie: Teneis que reiniciar mi sistema de movimiento con un codigo que perdi hace tiempo. Haciendo eso ya podreis arreglarme");
+
+    Nova("10%","25%","33%","0","",""); /*width,height,top,left,right,bottom*/
+    Casper("10%","25%","30%","0","",""); /*width,height,top,left,right,bottom*/
+    Objeto("Bonnie","25%","30%","30%","","10%",""); /*id,width,height,top,bottom,left,right */
+}
+function Escena21_2(){
+
+    BorrarContenido();
+
+    MeterContenido("<input id='code' type='text' size='4' minlength='4' maxlength='4' placeholder='Code'>",'../Imagenes/Circuitos.jpg');
+
+    CambiarVolver('Escena20_2()',"");
+
+    CambiarSeguir('Escena22_2()',"");
+
+    CambiarDialogo("Casper: Descuida, te repararemos"+"<br>"+"(Introduce el codigo)");
+
+    Objeto("code","13%","13%","35%","","40%",""); /*id,width,height,top,bottom,left,right */
+   
+}
+function Escena22_2(){
+
+    if(document.getElementById('code').value != 195+"B" && document.getElementById('code').value != 195+"b"){
+
+        BorrarContenido();
+
+        MeterContenido("<div id='code'>Incorrecto</div>",'../Imagenes/Circuitos.jpg');
+
+        CambiarVolver('Escena21_2()',"");
+
+        CambiarSeguir('',"../Imagenes/NoSeguir.png");
+
+        CambiarDialogo("Nova: Vaya no es correcto, creo que vi una hoja antes de encontrar la casa abandonada y despues de salir del motel con el codigo pero no estoy segura");
+    
+        Objeto("code","13%","10%","35%","","40%",""); /*id,width,height,top,bottom,left,right */
+    
+        Incorrecto();   
+
+    }else{
+
+        BorrarContenido();
+
+        MeterContenido("<div id='code'>Correcto</div>",'../Imagenes/Circuitos.jpg');
+
+        CambiarVolver('',"../Imagenes/NoVolver.png");
+
+        CambiarSeguir('Escena23_2()',"");
+
+        CambiarDialogo("Casper: Genial, el codigo es correcto, ya podemos arreglarte"+"<br>"+"Nota: A partir de aqui no puedes volver");
+    
+        Objeto("code","13%","10%","35%","","40%",""); /*id,width,height,top,bottom,left,right */
+    
+        Correcto(); 
+    }
+}
+function Escena23_2(){
+
+    BorrarContenido();
+
+    MeterContenido("<img id='Casper' src='../Imagenes/Casper.jpg' alt='Casper'/> <img id='Nova' src='../Imagenes/Nova.jpg' alt='Nova'/> <img id='Bonnie' src='../Imagenes/Bonnie.png' alt='Bonnie'/>",'../Imagenes/Acantilado.jpg');
+
+    CambiarVolver('',"../Imagenes/NoVolver.png");
+
+    CambiarSeguir('Escena24_2()',"");
+
+    CambiarDialogo("Bonnie:No se como puedo daros las gracias, Ahora que lo pienso mi casa tenia el mismo codigo de entrada,Ahora mismo seguro que ya esta hecha pedazos");
+
+    Nova("10%","25%","23%","0","",""); /*width,height,top,left,right,bottom*/
+    Casper("10%","25%","20%","0","",""); /*width,height,top,left,right,bottom*/
+    Objeto("Bonnie","15%","50%","10%","","10%",""); /*id,width,height,top,bottom,left,right */
+}
+function Escena24_2(){
+    
+    BorrarContenido();
+
+    MeterContenido("<img id='Casper' src='../Imagenes/Casper.jpg' alt='Casper'/> <img id='Nova' src='../Imagenes/Nova.jpg' alt='Nova'/> <img id='Bonnie' src='../Imagenes/Bonnie.png' alt='Bonnie'/>",'../Imagenes/Acantilado.jpg');
+
+    CambiarVolver('',"../Imagenes/NoVolver.png");
+
+    CambiarSeguir('Escena25_2()',"");
+
+    CambiarDialogo("Nova: No te preocupes, puedes quedarte ha vivir con nosotros una temporada hasta que consigas otra");
+
+    Nova("10%","25%","23%","0","",""); /*width,height,top,left,right,bottom*/
+    Casper("10%","25%","20%","0","",""); /*width,height,top,left,right,bottom*/
+    Objeto("Bonnie","15%","50%","10%","","10%",""); /*id,width,height,top,bottom,left,right */
+}
+function Escena25_2(){
+
+    BorrarContenido();
+
+    MeterContenido("<img id='Casper' src='../Imagenes/Casper.jpg' alt='Casper'/> <img id='Nova' src='../Imagenes/Nova.jpg' alt='Nova'/> <img id='Bonnie' src='../Imagenes/Bonnie.png' alt='Bonnie'/>",'../Imagenes/Acantilado.jpg');
+
+    CambiarVolver('',"../Imagenes/NoVolver.png");
+
+    CambiarSeguir('FIN2()',"");
+
+    CambiarDialogo("Bonnie: De verdad hariais eso por mi?"+"<br>"+"Casper: Claro, es lo menos que podemos hacer por ti. Ven con nosotros");
+
+    Nova("10%","25%","23%","0","",""); /*width,height,top,left,right,bottom*/
+    Casper("10%","25%","20%","0","",""); /*width,height,top,left,right,bottom*/
+    Objeto("Bonnie","15%","50%","10%","","10%",""); /*id,width,height,top,bottom,left,right */
+
+}
+
+/*Finales: */
+
+function FIN1_1 (){
+    BorrarContenido();
+
+    MeterContenido("<img id='Casper' src='../Imagenes/Casper.jpg' alt='Casper'/> <img id='Nova' src='../Imagenes/Nova.jpg' alt='Nova'/> <img id='estatua' src='../Imagenes/Estatua.png' alt='Estatua' > <audio loop id='Fin1_1' src='../Audios/Final1_1.mp3'></audio>",'../Imagenes/Museo.jpg');
+
+    ReproducirAudio('Fin1_1');
+    CambiarVolver('',"../Imagenes/NoVolver.png");
+
+    CambiarSeguir('DeVuelta()',"../Imagenes/SeguirBueno.png");
+
+    Nova("12%","30%","65%","56%","",""); /*width,height,top,left,right,bottom*/
+    Casper("12%","30%","63%","56%","",""); /*width,height,top,left,right,bottom*/
+
+    Objeto("estatua","20%","35%","60%","","10%",""); /*id,width,height,top,bottom,left,right */
+    
+
+    CambiarDialogo("FINAL SENSATO 👏👏👏👏👏"+"<br>"+"(Enhorabuena has superado el juego, Pulsa siguiente para volver a jugar)");
+
+    
+}
+function FIN1_2(){
+
+    BorrarContenido();
+
+    MeterContenido("<audio id='Final1_2' loop src= '../Audios/Final1_2.mp3'></audio>",'../Imagenes/Incendio.jpg');
+
+    ReproducirAudio('Final1_2');
+
+    CambiarVolver('',"../Imagenes/NoVolver.png");
+
+    CambiarSeguir('DeVuelta()',"../Imagenes/SeguirMalo.png");
+
+    
+    CambiarDialogo("FINAL MALO 💀💀💀💀💀"+"<br>"+"(Vaya, otra vez sera, Pulsa siguiente para volver a jugar)");
+}
+function FIN2(){
+    
+    BorrarContenido();
+
+    MeterContenido("<img id='Casper' src='../Imagenes/Casper.jpg' alt='Casper'/> <img id='Nova' src='../Imagenes/Nova.jpg' alt='Nova'/> <img id='Bonnie' src='../Imagenes/Bonnie.png' alt='Bonnie' > <audio loop id='Final2' src='../Audios/Final2.mp3'></audio>",'../Imagenes/Casa.jpg');
+
+    ReproducirAudio('Final2');
+    CambiarVolver('',"../Imagenes/NoVolver.png");
+
+    CambiarSeguir('DeVuelta()',"../Imagenes/SeguirAnimatronico.png");
+
+    Nova("12%","30%","45%","66%","",""); /*width,height,top,left,right,bottom*/
+    Casper("12%","30%","43%","66%","",""); /*width,height,top,left,right,bottom*/
+
+    Objeto("Bonnie","20%","55%","40%","","10%",""); /*id,width,height,top,bottom,left,right */
+    
+
+    CambiarDialogo("FINAL ANIMATRONICO 🤖🤖🤖🤖🤖"+"<br>"+"(Enhorabuena has superado el juego, Pulsa siguiente para volver a jugar)");
 }
