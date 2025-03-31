@@ -128,6 +128,22 @@ function ElementoLista (Class,frases){
      
     
 }
+
+let agotado = null; /*La declaro como una variable global para que exista en todas las funciones.*/
+function Temporizador(tiempo){
+     agotado = setTimeout(() => {
+        CambiarDialogo("<span id='pista'>Pista: Cuando has salido del hotel podrias haberte encontrado con alguna parte de un codigo. Si ya lo has encontrado fijate en los colores del codigo y asocialos con algo que hayas investigado</span>"); /*Frase que saldra cuando expire el tiempo*/
+    }, tiempo*1000); /*Milisegundos que van a pasar hasta que se cambie la frase de la Consola*/
+}
+
+function QuitarTemporizador (){ /*Hago este metodo para quitar el temporizador cambiando el valor de agotado. Si es igual a 0 no haria nada*/
+    if(agotado){
+        clearTimeout(agotado); //Desactivo el temporizador
+        agotado = null; // Quito el temporizador y pongo valor null
+    }
+    
+}
+
 function Incorrecto (){
     document.getElementById('code').style.backgroundColor = "red";
     document.getElementById('code').value= 'Incorrecto';   
@@ -144,45 +160,62 @@ function ReproducirAudio (sonido){
     audio.play();
 }
 
-/*Elementos de la habitacion del Motel: */
+/*Zonas Ocultas del Scaperoom: */
 
 function Armario(){
 
     BorrarContenido();
 
-    MeterContenido("",'../Imagenes/Armario.jpg');
+    MeterContenido("<div id='a'>A</div>",'../Imagenes/Armario.jpg');
 
     CambiarVolver('Escena11()',"");
 
     CambiarSeguir('Escena11()',"");
 
     CambiarDialogo("Nova: En este armario caben muchas cosas, no me imaginaba que tuviera el suficiente espacio para nuestra ropa");
+    Objeto("a","5%","8%","5%","","2%",""); /*id,width,height,top,bottom,left,right */
 }
 function cuadro (){
 
     BorrarContenido();
 
-    MeterContenido("<div id='ocho'>B</div>'",'../Imagenes/Cuadro.jpg');
+    MeterContenido("<div id='b'>B</div>",'../Imagenes/Cuadro.jpg');
 
     CambiarVolver('Escena11()',"");
 
     CambiarSeguir('Escena11()',"");
 
-    CambiarDialogo("Nova: Este cuadro me recuerda a un juego pero no estoy muy segura a cual. Parece que cada uno va catalogado con una letra");
-    Objeto("ocho","5%","8%","5%","","2%",""); /*id,width,height,top,bottom,left,right */
+    CambiarDialogo("Nova: Este cuadro me recuerda a un juego pero no estoy muy segura a cual");
+    Objeto("b","5%","8%","5%","","2%",""); /*id,width,height,top,bottom,left,right */
 }
 function ventana(){
     BorrarContenido();
 
-    MeterContenido("",'../Imagenes/Bosque2.jpg');
+    MeterContenido("<div id='c'>C</div>",'../Imagenes/Bosque2.jpg');
 
     CambiarVolver('Escena11()',"");
 
     CambiarSeguir('Escena11()',"");
 
-    CambiarDialogo("Nova: Guau, se ve un bonito bosque desde aqui");
+    CambiarDialogo("Nova: Guau, se ve un bonito el bosque desde aqui");
+    Objeto("c","5%","8%","5%","","2%",""); /*id,width,height,top,bottom,left,right */
 }
 
+function codigo (){
+
+    BorrarContenido();
+
+    MeterContenido("",'../Imagenes/Codigo.png');
+
+    CambiarVolver('Escena13()',"");
+
+    CambiarSeguir('Escena13()',"");
+
+    CambiarDialogo("Nova:Parece una pista. Servira para mas adelante");
+    
+
+ 
+}
 
 
 /*Escenas: */
@@ -270,7 +303,7 @@ function Escena5 (){
 
     CambiarSeguir("",'../Imagenes/NoSeguir.png');
 
-    CambiarDialogo("Esta es la casa de Casper y Nova"+"<br>"+" (Pulsa la puerta para entrar)");
+    CambiarDialogo("Esta es la casa de Casper y Nova"+"<br>"+"<span id='pista'>(Pulsa la puerta para entrar)</span>");
 
     Objeto("puerta","5%","8%","72%","","58%",""); /*id,width,height,top,bottom,left,right */
    
@@ -304,7 +337,7 @@ function Escena7 (){
 
     CambiarSeguir("","../Imagenes/NoSeguir.png");
 
-    CambiarDialogo("Casper: Ya voy!!! "+"<br>"+"(Pulsa la puerta de la entrada para salir)");
+    CambiarDialogo("Casper: Ya voy!!! "+"<br>"+"<span id='pista'>(Pulsa la puerta de la entrada para salir)</span>");
 
     Nova("20%","50%","35%","35%","0","0"); /*width,height,top,left,right,bottom*/
 
@@ -321,7 +354,7 @@ function Escena8 (){
 
     CambiarSeguir("Escena9()","../Imagenes/BusDia.png");
 
-    CambiarDialogo("Nova:Bien. Ya estamos listos para la aventura" +"<br>"+"(Pulsa el bus para continuar)");
+    CambiarDialogo("Nova:Bien. Ya estamos listos para la aventura" +"<br>"+"<span id='pista'>(Pulsa el bus para continuar)</span>");
 
     Nova("12%","30%","70%","66%","",""); /*width,height,top,left,right,bottom*/
    
@@ -338,7 +371,7 @@ function Escena9(){
 
     CambiarSeguir("","../Imagenes/NoSeguir.png");
 
-    CambiarDialogo("Nova: Por fin hemos llegado.Hasta se nos ha hecho de noche. Dejemos el equipaje"+"<br>"+"(Pulsa la puerta para entrar en la habitacion)");
+    CambiarDialogo("Nova: Por fin hemos llegado.Hasta se nos ha hecho de noche. Dejemos el equipaje"+"<br>"+"<span id='pista'>(Pulsa la puerta para entrar en la habitacion)</span>");
 
     Nova("12%","30%","70%","66%","",""); /*width,height,top,left,right,bottom*/
    
@@ -376,13 +409,13 @@ function Escena11(){
 
     CambiarSeguir('Escena12()',"");
 
-    CambiarDialogo("Nova: Ahora que Casper se ha ido al baño es buen momento para explorar la casa"+"<br>"+"(Pulsa en las zonas clikeables para investigarlas)");
+    CambiarDialogo("Nova: Ahora que Casper se ha ido al baño es buen momento para explorar la casa"+"<br>"+"<span id='pista'>(Hay 3 zonas clasificadas de la 'a' a la 'c'. Puedes inverstigarlas si quieres)</span>");
 
     Nova("20%","50%","52%","40%","0","0"); /*width,height,top,left,right,bottom*/
    
     Objeto("armario","15%","95%","","65%","0",""); /*id,width,height,top,bottom,left,right */
 
-    Objeto("ventana","15%","75%","","155%","82%",""); /*id,width,height,top,bottom,left,right */
+    Objeto("ventana","15%","75%","","155%","85%",""); /*id,width,height,top,bottom,left,right */
 
     Objeto("cuadro","10%","15%","","41.5%","42%",""); /*id,width,height,top,bottom,left,right */
     
@@ -424,24 +457,7 @@ function Escena13() {
     Nova("20%","50%","52%","50%","0","0"); /*width,height,top,left,right,bottom*/
     Casper("20%","50%","49%","50%","","0"); /*width,height,top,left,right,bottom*/
 
-    Objeto("papel","2%","7%","41%","","2%",""); /*id,width,height,top,bottom,left,right */
-}
-
-/*Mas Elementos: */
-
-function codigo (){
-
-    BorrarContenido();
-
-    MeterContenido("",'../Imagenes/Codigo.png');
-
-    CambiarVolver('Escena13()',"");
-
-    CambiarSeguir('Escena13()',"");
-
-    CambiarDialogo("Parece una pista. Servira para mas adelante");
-
- 
+    Objeto("papel","2%","2%","41%","","2%",""); /*id,width,height,top,bottom,left,right */
 }
 
 function Escena14(){
@@ -471,7 +487,7 @@ function Escena15(){
 
     CambiarSeguir('',"../Imagenes/NoSeguir.png");
 
-    CambiarDialogo("Escoge a quien hacer caso");
+    CambiarDialogo("<span id='pista'>Escoge a quien hacer caso</span>");
 
     Nova("15%","40%","52%","50%","0","0"); /*width,height,top,left,right,bottom*/
     Casper("15%","40%","49%","50%","","0"); /*width,height,top,left,right,bottom*/
@@ -483,6 +499,7 @@ function Escena15(){
 
 function Escena16_1(){
 
+    QuitarTemporizador();
     BorrarContenido();
 
     MeterContenido("<img id='Casper' src='../Imagenes/Casper.jpg' alt='Casper'/> <img id='Nova' src='../Imagenes/Nova.jpg' alt='Nova'/>",'../Imagenes/Cabaña.jpg');
@@ -509,9 +526,14 @@ function Escena17_1(){
     CambiarDialogo("Nova: Parece que necesitamos un codigo para entrar."+"<br>"+"Casper: Yo encontre uno antes de llegar aqui y despues de salir del Motel");
     
     Objeto("code","13%","13%","40%","","38%",""); /*id,width,height,top,bottom,left,right */
+
+    Temporizador(20);
+
 }
 function Escena18_1(){
     
+    QuitarTemporizador();
+
     if(document.getElementById('code').value != 195+"B" && document.getElementById('code').value != 195+"b"){
 
         BorrarContenido();
@@ -538,7 +560,7 @@ function Escena18_1(){
 
         CambiarSeguir('Escena19_1()',"");
 
-        CambiarDialogo("Casper: Genial, el codigo es correcto, Entremos!!!"+"<br>"+"Nota: A partir de aqui no podras volver, la opcion es tuya");
+        CambiarDialogo("Casper: Genial, el codigo es correcto, Entremos!!!"+"<br>"+"<span id='pista'>Nota: A partir de aqui no podras volver, la opcion es tuya</span>");
     
         Objeto("code","15%","10%","40%","","36%",""); /*id,width,height,top,bottom,left,right */
     
@@ -583,7 +605,6 @@ function Escena21_1_1(){
 
     BorrarContenido();
 
-
     MeterContenido("<img id='Casper' src='../Imagenes/Casper.jpg' alt='Casper'/> <img id='Nova' src='../Imagenes/Nova.jpg' alt='Nova'/> <img id='estatua' src='../Imagenes/Estatua.png' alt='Estatua'>",'../Imagenes/Atico.jpg');
 
     CambiarVolver('',"../Imagenes/NoVolver.png");
@@ -621,7 +642,6 @@ function Escena21_1_2(){
 
     BorrarContenido();
 
-
     MeterContenido("<img id='Casper' src='../Imagenes/Casper.jpg' alt='Casper'/> <img id='Nova' src='../Imagenes/Nova.jpg' alt='Nova'/> <img id='Chimenea' src = '../Imagenes/Chimenea_llamas.png'> <img id='Extintor' src = '../Imagenes/Extintor.png' onclick='Escena22_1_2()'> <audio loop id='Incendio' src='../Audios/Incendio.mp3'></audio>",'../Imagenes/Habitacion_abandonada.jpg');
 
     CambiarVolver('',"../Imagenes/NoVolver.png");
@@ -633,7 +653,7 @@ function Escena21_1_2(){
     Nova("23%","60%","42%","","",""); /*width,height,top,left,right,bottom*/
     Casper("22%","58%","38%","","",""); /*width,height,top,left,right,bottom*/
 
-    CambiarDialogo("Casper: LA CHIMENEA ESTA EN LLAMAS, VAMOS A MORIIIRR!!!"+"<br>"+"Nova: Mira, un extintor.Cogelo,RAPIDO!!!"+"<br>"+"(Pulsa el extintor para apagar el fuego)");
+    CambiarDialogo("Casper: LA CHIMENEA ESTA EN LLAMAS, VAMOS A MORIIIRR!!!"+"<br>"+"Nova: Mira, un extintor.Cogelo,RAPIDO!!!"+"<br>"+"<span id='pista'>(Pulsa el extintor para apagar el fuego)</span>");
 
     Objeto("Chimenea","30%","50%","35%","","3%",""); /*id,width,height,top,bottom,left,right */
     Objeto("Extintor","15%","30%","40%","","5%",""); /*id,width,height,top,bottom,left,right */
@@ -643,7 +663,6 @@ function Escena21_1_2(){
 function Escena22_1_2 (){
 
     BorrarContenido();
-
 
     MeterContenido("<img id='Casper' src='../Imagenes/Casper.jpg' alt='Casper'/> <img id='Nova' src='../Imagenes/Nova.jpg' alt='Nova'/> <img id='Chimenea' src = '../Imagenes/Chimenea_llamas.png'> <img id='Extintor' src = '../Imagenes/Extintor.png'> <img id='Fuego' src='../Imagenes/Fuego.png'>  <audio loop id='Incendio' src='../Audios/Incendio.mp3'></audio>",'../Imagenes/Habitacion_abandonada_Incendio.jpg');
 
@@ -666,6 +685,7 @@ function Escena22_1_2 (){
 /*Nova: */
 
 function Escena16_2(){
+
     BorrarContenido();
 
     MeterContenido("<img id='Casper' src='../Imagenes/Casper.jpg' alt='Casper'/> <img id='Nova' src='../Imagenes/Nova.jpg' alt='Nova'/>",'../Imagenes/Cabaña.jpg');
@@ -680,6 +700,7 @@ function Escena16_2(){
     Casper("15%","40%","49%","50%","","0"); /*width,height,top,left,right,bottom*/
 }
 function Escena17_2(){
+
     BorrarContenido();
 
     MeterContenido("<img id='Casper' src='../Imagenes/Casper.jpg' alt='Casper'/> <img id='Nova' src='../Imagenes/Nova.jpg' alt='Nova'/>",'../Imagenes/Camino.jpg');
@@ -694,6 +715,7 @@ function Escena17_2(){
     Casper("15%","40%","60%","20%","",""); /*width,height,top,left,right,bottom*/
 }
 function Escena18_2(){
+
     BorrarContenido();
 
     MeterContenido("<img id='Casper' src='../Imagenes/Casper.jpg' alt='Casper'/> <img id='Nova' src='../Imagenes/Nova.jpg' alt='Nova'/> <img id='Bonnie' src='../Imagenes/Bonnie_sentado.png' alt='Bonnie'/>",'../Imagenes/Acantilado.jpg');
@@ -709,6 +731,7 @@ function Escena18_2(){
     Objeto("Bonnie","25%","30%","30%","","10%",""); /*id,width,height,top,bottom,left,right */
 }
 function Escena19_2(){
+
     BorrarContenido();
 
     MeterContenido("<img id='Casper' src='../Imagenes/Casper.jpg' alt='Casper'/> <img id='Nova' src='../Imagenes/Nova.jpg' alt='Nova'/> <img id='Bonnie' src='../Imagenes/Bonnie_sentado.png' alt='Bonnie'/>",'../Imagenes/Acantilado.jpg');
@@ -724,8 +747,10 @@ function Escena19_2(){
     Objeto("Bonnie","25%","30%","30%","","10%",""); /*id,width,height,top,bottom,left,right */
 }
 function Escena20_2(){
-    BorrarContenido();
 
+    QuitarTemporizador();
+    BorrarContenido();
+   
     MeterContenido("<img id='Casper' src='../Imagenes/Casper.jpg' alt='Casper'/> <img id='Nova' src='../Imagenes/Nova.jpg' alt='Nova'/> <img id='Bonnie' src='../Imagenes/Bonnie_sentado.png' alt='Bonnie'/>",'../Imagenes/Acantilado.jpg');
 
     CambiarVolver('Escena19_2()',"");
@@ -748,12 +773,16 @@ function Escena21_2(){
 
     CambiarSeguir('Escena22_2()',"");
 
-    CambiarDialogo("Casper: Descuida, te repararemos"+"<br>"+"(Introduce el codigo)");
+    CambiarDialogo("Casper: Descuida, te repararemos"+"<br>"+"Nova: Me pregunto cual sera el codigo");
 
     Objeto("code","13%","13%","35%","","40%",""); /*id,width,height,top,bottom,left,right */
+
+    Temporizador(20);
    
 }
 function Escena22_2(){
+
+    QuitarTemporizador();
 
     if(document.getElementById('code').value != 195+"B" && document.getElementById('code').value != 195+"b"){
 
@@ -781,7 +810,7 @@ function Escena22_2(){
 
         CambiarSeguir('Escena23_2()',"");
 
-        CambiarDialogo("Casper: Genial, el codigo es correcto, ya podemos arreglarte"+"<br>"+"Nota: A partir de aqui no puedes volver");
+        CambiarDialogo("Casper: Genial, el codigo es correcto, ya podemos arreglarte"+"<br>"+"<span id='pista'>Nota: A partir de aqui no puedes volver</span>");
     
         Objeto("code","13%","10%","35%","","40%",""); /*id,width,height,top,bottom,left,right */
     
@@ -798,7 +827,7 @@ function Escena23_2(){
 
     CambiarSeguir('Escena24_2()',"");
 
-    CambiarDialogo("Bonnie:No se como puedo daros las gracias, Ahora que lo pienso mi casa tenia el mismo codigo de entrada,Ahora mismo seguro que ya esta hecha pedazos");
+    CambiarDialogo("Bonnie:No se como puedo daros las gracias, Ahora que lo pienso mi casa tenia el mismo codigo de entrada,Seguramente ya esta hecha pedazos por la chimenea");
 
     Nova("10%","25%","23%","0","",""); /*width,height,top,left,right,bottom*/
     Casper("10%","25%","20%","0","",""); /*width,height,top,left,right,bottom*/
@@ -814,7 +843,7 @@ function Escena24_2(){
 
     CambiarSeguir('Escena25_2()',"");
 
-    CambiarDialogo("Nova: No te preocupes, puedes quedarte ha vivir con nosotros una temporada hasta que consigas otra");
+    CambiarDialogo("Nova: No te preocupes, puedes quedarte a vivir con nosotros una temporada hasta que consigas otra");
 
     Nova("10%","25%","23%","0","",""); /*width,height,top,left,right,bottom*/
     Casper("10%","25%","20%","0","",""); /*width,height,top,left,right,bottom*/
@@ -856,7 +885,7 @@ function FIN1_1 (){
     Objeto("estatua","20%","35%","60%","","10%",""); /*id,width,height,top,bottom,left,right */
     
 
-    CambiarDialogo("FINAL SENSATO 👏👏👏👏👏"+"<br>"+"(Enhorabuena has superado el juego, Pulsa siguiente para volver a jugar)");
+    CambiarDialogo("FINAL SENSATO 👏👏👏👏👏"+"<br>"+"<span id='pista'>(Enhorabuena has superado el juego,Pulsa siguiente para volver a jugar)</span>");
 
     
 }
@@ -873,7 +902,7 @@ function FIN1_2(){
     CambiarSeguir('DeVuelta()',"../Imagenes/SeguirMalo.png");
 
     
-    CambiarDialogo("FINAL MALO 💀💀💀💀💀"+"<br>"+"(Vaya, otra vez sera, Pulsa siguiente para volver a jugar)");
+    CambiarDialogo("FINAL MALO 💀💀💀💀💀"+"<br>"+"<span id='pista'>(Vaya, otra vez sera,Pulsa siguiente para volver a jugar)</span>");
 }
 function FIN2(){
     
@@ -892,5 +921,5 @@ function FIN2(){
     Objeto("Bonnie","20%","55%","40%","","10%",""); /*id,width,height,top,bottom,left,right */
     
 
-    CambiarDialogo("FINAL ANIMATRONICO 🤖🤖🤖🤖🤖"+"<br>"+"(Enhorabuena has superado el juego, Pulsa siguiente para volver a jugar)");
+    CambiarDialogo("FINAL ANIMATRONICO 🤖🤖🤖🤖🤖"+"<br>"+"<span id='pista'>(Enhorabuena has superado el juego,Pulsa siguiente para volver a jugar)</span>");
 }
